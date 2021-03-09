@@ -1,0 +1,10 @@
+import numpy as np 
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+df=pd.read_csv('https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/loan_train.csv')
+data=df.drop(['Unnamed: 0.1','Unnamed: 0'],axis=1)
+data['customer']=range(0,len(df))
+
+
+data=data[['customer','age','Gender','terms','Principal','effective_date','due_date','education','loan_status']]
+data
